@@ -1,22 +1,16 @@
 /* ─────────────────────────────────────────────────────────────
-   toeesh.dev — editorial letterpress design system
-   paper · ink · one rust accent · Fraunces / DM Sans / JetBrains Mono
+   toeesh.dev — swiss poster / brand-specimen design system
+   charcoal grain field · bone grotesk · signal red · line chips
+   Archivo VF (wdth+wght) / JetBrains Mono
    ───────────────────────────────────────────────────────────── */
 
 /* ── fonts ─────────────────────────────────────────────────── */
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('/fonts/fraunces-latin.woff2') format('woff2');
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin.woff2') format('woff2');
   font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'DM Sans';
-  src: url('/fonts/dmsans-latin.woff2') format('woff2');
-  font-weight: 100 1000;
+  font-stretch: 62% 125%;
   font-style: normal;
   font-display: swap;
 }
@@ -32,23 +26,28 @@
 /* ── tokens ────────────────────────────────────────────────── */
 
 :root {
-  /* palette — letterpress */
-  --paper: #f4f1e8;
-  --surface: #ffffff;
-  --ink: #1c1814;
-  --ink-2: #6b6660;
-  --ink-3: #c0bab0;
-  --accent: #c13a2a;
-  --accent-bg: rgba(193, 58, 42, 0.08);
+  /* palette — dark poster */
+  --field: #131311;
+  --board: #1c1c19;
+  --hairline: #2e2e2a;
+  --bone: #eeebe3;
+  --bone-2: #98948a;
+  --bone-3: #55524b;
+  --red: #e2372b;
+
+  /* subway line chips — small accents only, never chrome */
+  --chip-yellow: #f5c518;
+  --chip-green: #22a559;
+  --chip-blue: #2c66d4;
+  --chip-orange: #ef7b24;
 
   /* type */
-  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
-  --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-grotesk: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
 
-  --t-display: clamp(3.5rem, 9vw, 7.5rem);
-  --t-h1: clamp(2rem, 5vw, 4rem);
-  --t-h2: clamp(1.25rem, 3vw, 1.875rem);
+  --t-poster: clamp(4rem, 14vw, 12rem);
+  --t-h1: clamp(2.5rem, 7vw, 5.5rem);
+  --t-h2: clamp(1.5rem, 3.5vw, 2.5rem);
   --t-h3: 1.25rem;
   --t-body-lg: 1.125rem;
   --t-body: 1rem;
@@ -56,10 +55,9 @@
   --t-label: 0.6875rem;
 
   /* layout */
-  --gutter: clamp(1.25rem, 5vw, 3rem);
-  --max-w: 860px;
-  --max-w-wide: 1100px;
-  --section-gap: clamp(4rem, 8vh, 6rem);
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --max-w: 1200px;
+  --section-gap: clamp(5rem, 10vh, 8rem);
 }
 
 /* ── reset ─────────────────────────────────────────────────── */
@@ -74,29 +72,28 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: auto; /* no smooth-scroll — nothing gratuitous */
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
+  background: var(--field);
+  color: var(--bone);
+  font-family: var(--font-grotesk);
   font-size: var(--t-body);
-  line-height: 1.65;
+  line-height: 1.6;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   position: relative;
 }
 
-/* faint letterpress grain — static texture, never animated */
+/* poster grain — static texture, never animated */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 1000;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 img,
@@ -113,41 +110,46 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-h1 { font-size: var(--t-h1); font-weight: 800; }
+h1 { font-size: var(--t-h1); font-weight: 850; }
 h2 { font-size: var(--t-h2); }
-h3 { font-size: var(--t-h3); font-weight: 600; }
+h3 { font-size: var(--t-h3); }
 
 p {
-  max-width: 65ch;
+  max-width: 62ch;
 }
 
 a {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--ink-3);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-  transition: text-decoration-color 150ms ease;
+  text-decoration: none;
 }
 
-a:hover {
-  text-decoration-color: var(--accent);
+p a,
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--bone-3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-color 150ms ease, color 150ms ease;
+}
+
+p a:hover,
+.prose a:hover {
+  text-decoration-color: var(--red);
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--paper);
+  background: var(--red);
+  color: var(--bone);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--red);
   outline-offset: 3px;
 }
 
@@ -160,35 +162,49 @@ a:hover {
   padding-right: var(--gutter);
 }
 
-.container--wide {
-  max-width: var(--max-w-wide);
-  margin: 0 auto;
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-  gap: 1.25rem;
-}
-
-/* the machine voice — section counters, dates, tags, statuses */
+/* the machine voice — corner metadata, dates, tags, statuses */
 .label {
   font-family: var(--font-mono);
   font-size: var(--t-label);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--ink-2);
+  letter-spacing: 0.14em;
+  color: var(--bone-2);
 }
 
-.display {
-  font-family: var(--font-display);
-  font-size: var(--t-display);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+/* compressed poster type — the Helvetica-black register */
+.poster {
+  font-size: var(--t-poster);
+  font-weight: 900;
+  font-stretch: 72%;
+  line-height: 0.86;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
   text-wrap: balance;
+}
+
+/* subway line bullet */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95em;
+  height: 0.95em;
+  border-radius: 50%;
+  flex: none;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px; /* hairline gaps over a hairline background — swiss table */
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+}
+
+@media (min-width: 720px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* long-form markdown output */
@@ -201,20 +217,17 @@ a:hover {
   margin-top: 2em;
 }
 
-.prose strong {
-  font-weight: 650;
-}
-
 .prose blockquote {
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--red);
   padding-left: 1.25rem;
-  color: var(--ink-2);
+  color: var(--bone-2);
 }
 
 .prose code {
   font-family: var(--font-mono);
   font-size: 0.875em;
-  background: var(--accent-bg);
+  background: var(--board);
+  border: 1px solid var(--hairline);
   padding: 0.1em 0.35em;
   border-radius: 2px;
 }
@@ -224,11 +237,40 @@ a:hover {
   padding-left: 1.4rem;
 }
 
-/* accent section rule — the publisher's mark */
+/* interactive surfaces — fast inversions, nothing animated beyond color */
+.project-card {
+  transition: background 150ms ease;
+}
+
+.project-card:hover {
+  background: var(--board) !important;
+}
+
+.project-card:hover h3 {
+  color: var(--red);
+}
+
+.mtta-board {
+  transition: border-color 150ms ease;
+}
+
+.mtta-board:hover {
+  border-color: #ffd21f !important;
+}
+
+.strip-row {
+  transition: background 150ms ease;
+}
+
+.strip-row:hover {
+  background: var(--board);
+}
+
+/* red section rule */
 .rule {
   border: 0;
-  border-top: 2px solid var(--accent);
-  width: 3rem;
+  border-top: 3px solid var(--red);
+  width: 4rem;
   margin: 0;
 }
 

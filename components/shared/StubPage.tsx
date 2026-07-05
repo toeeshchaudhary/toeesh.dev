@@ -1,6 +1,7 @@
-import Link from 'next/link';
+import Nav from '@/components/layout/Nav';
+import Footer from '@/components/layout/Footer';
 
-// Phase-0 placeholder used by every route until its real page lands in Phase 2.
+// Placeholder used by routes until their real pages land in Phase 2.
 export default function StubPage({
   counter,
   title,
@@ -11,25 +12,35 @@ export default function StubPage({
   note: string;
 }) {
   return (
-    <main
-      style={{
-        minHeight: '100dvh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-      }}
-    >
-      <div className="container" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <p className="label" style={{ marginBottom: '2rem' }}>
-          {counter}
-        </p>
-        <h1>{title}</h1>
-        <hr className="rule" style={{ marginTop: '2rem', marginBottom: '2rem' }} />
-        <p className="label">{note}</p>
-        <p style={{ marginTop: '3rem', fontSize: 'var(--t-small)' }}>
-          <Link href="/">← toeesh.dev</Link>
-        </p>
-      </div>
-    </main>
+    <>
+      <Nav />
+      <main
+        style={{
+          minHeight: '70dvh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      >
+        <div className="container" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+          <p className="label" style={{ marginBottom: '2rem' }}>
+            {counter}
+          </p>
+          <h1
+            style={{
+              fontWeight: 900,
+              fontStretch: '75%',
+              textTransform: 'uppercase',
+              lineHeight: 0.9,
+            }}
+          >
+            {title}
+          </h1>
+          <hr className="rule" style={{ marginTop: '2rem', marginBottom: '2rem' }} />
+          <p className="label">{note} — full page arrives this autumn</p>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

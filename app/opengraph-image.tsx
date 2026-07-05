@@ -5,7 +5,9 @@ export const alt = 'toeesh.dev — Toeesh Chaudhary';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-// Editorial press card: paper field, rust top bar, serif masthead, dark torn stub.
+const CHIPS = ['#e2372b', '#2c66d4', '#22a559', '#f5c518'];
+
+// Dark swiss poster: charcoal field, compressed bone type, line chips.
 export default function OpengraphImage() {
   return new ImageResponse(
     (
@@ -15,69 +17,63 @@ export default function OpengraphImage() {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          background: '#f4f1e8',
-          fontFamily: 'Georgia, serif',
+          background: '#131311',
+          color: '#eeebe3',
+          padding: '60px 70px',
+          fontFamily: 'Arial, sans-serif',
         }}
       >
-        <div style={{ height: 20, background: '#c13a2a', display: 'flex' }} />
-        <div style={{ display: 'flex', flex: 1 }}>
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              padding: '0 80px',
-            }}
-          >
-            <div
-              style={{
-                fontSize: 24,
-                letterSpacing: 4,
-                textTransform: 'uppercase',
-                color: '#6b6660',
-                fontFamily: 'monospace',
-                marginBottom: 28,
-              }}
-            >
-              est. 2026 · delhi ncr
-            </div>
-            <div
-              style={{
-                fontSize: 96,
-                fontWeight: 700,
-                color: '#1c1814',
-                lineHeight: 1,
-                letterSpacing: -2,
-              }}
-            >
-              toeesh.dev
-            </div>
-            <div style={{ fontSize: 30, color: '#6b6660', marginTop: 30, maxWidth: 640 }}>
-              Building at the edge of circuitry and software.
-            </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: 22,
+            letterSpacing: 4,
+            color: '#98948a',
+            fontFamily: 'monospace',
+          }}
+        >
+          <div style={{ display: 'flex' }}>PORTFOLIO · EST. 2026</div>
+          <div style={{ display: 'flex', gap: 10 }}>
+            {CHIPS.map((c, i) => (
+              <div key={i} style={{ width: 18, height: 18, borderRadius: 9, background: c, display: 'flex' }} />
+            ))}
           </div>
-          <div
-            style={{
-              width: 220,
-              background: '#1c1814',
-              borderLeft: '3px dashed #c0bab0',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <div
-              style={{
-                color: '#f4f1e8',
-                fontSize: 28,
-                fontFamily: 'monospace',
-                letterSpacing: 6,
-                transform: 'rotate(90deg)',
-              }}
-            >
-              TOEESH
-            </div>
+          <div style={{ display: 'flex' }}>DELHI NCR → JAPAN 2027</div>
+        </div>
+
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            fontSize: 150,
+            fontWeight: 900,
+            lineHeight: 0.9,
+            letterSpacing: -4,
+            textTransform: 'uppercase',
+          }}
+        >
+          <div style={{ display: 'flex' }}>Toeesh</div>
+          <div style={{ display: 'flex' }}>Chaudhary</div>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: 26,
+          }}
+        >
+          <div style={{ display: 'flex', fontWeight: 700 }}>
+            I build hardware, software & one transit map
+            <span style={{ color: '#e2372b' }}>.</span>
+          </div>
+          <div style={{ display: 'flex', fontFamily: 'monospace', color: '#98948a', fontSize: 22 }}>
+            toeesh.dev
           </div>
         </div>
       </div>

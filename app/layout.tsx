@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#f4f1e8',
+  themeColor: '#131311',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
@@ -52,17 +52,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* preload the display + body faces so the hero paints without a swap flash */}
+        {/* preload the grotesk so the poster hero paints without a swap flash */}
         <link
           rel="preload"
-          href="/fonts/fraunces-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/dmsans-latin.woff2"
+          href="/fonts/archivo-latin.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
