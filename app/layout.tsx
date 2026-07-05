@@ -55,9 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* preload the grotesk so the poster hero paints without a swap flash */}
         <link
           rel="preload"
-          href="/fonts/archivo-latin.woff2"
+          href="/fonts/RMNeueVF-Regular.ttf"
           as="font"
-          type="font/woff2"
+          type="font/ttf"
           crossOrigin="anonymous"
         />
       </head>

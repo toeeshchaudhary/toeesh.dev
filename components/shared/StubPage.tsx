@@ -26,16 +26,7 @@ export default function StubPage({
           <p className="label" style={{ marginBottom: '2rem' }}>
             {counter}
           </p>
-          <h1
-            style={{
-              fontWeight: 900,
-              fontStretch: '75%',
-              textTransform: 'uppercase',
-              lineHeight: 0.9,
-            }}
-          >
-            {title}
-          </h1>
+          <h1 style={{ fontWeight: 900, letterSpacing: '-0.04em', lineHeight: 0.9 }}>{title}</h1>
           <hr className="rule" style={{ marginTop: '2rem', marginBottom: '2rem' }} />
           <p className="label">{note} — full page arrives this autumn</p>
         </div>

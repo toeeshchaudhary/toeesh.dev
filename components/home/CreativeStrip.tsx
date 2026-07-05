@@ -29,10 +29,8 @@ export default function CreativeStrip() {
             <span
               style={{
                 fontWeight: 850,
-                fontStretch: '80%',
-                textTransform: 'uppercase',
                 fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.03em',
               }}
             >
               {it.label}

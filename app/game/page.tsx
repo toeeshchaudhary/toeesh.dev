@@ -10,7 +10,7 @@ export default function GamePage() {
   return (
     <StubPage
       counter="02 · the game"
-      title="The Game"
+      title="the game"
       note="in progress · chapter 1 playable target jan 2027"
     />
   );

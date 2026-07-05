@@ -10,7 +10,7 @@ export default function LabPage() {
   return (
     <StubPage
       counter="04 · lab"
-      title="Lab"
+      title="the lab"
       note="ongoing · llms on 4gb vram · riced linux · ffmpeg"
     />
   );

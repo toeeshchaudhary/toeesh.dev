@@ -52,12 +52,11 @@ export default function OpengraphImage() {
             fontSize: 150,
             fontWeight: 900,
             lineHeight: 0.9,
-            letterSpacing: -4,
-            textTransform: 'uppercase',
+            letterSpacing: -6,
           }}
         >
-          <div style={{ display: 'flex' }}>Toeesh</div>
-          <div style={{ display: 'flex' }}>Chaudhary</div>
+          <div style={{ display: 'flex' }}>toeesh</div>
+          <div style={{ display: 'flex' }}>chaudhary</div>
         </div>
 
         <div
@@ -69,7 +68,7 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: 'flex', fontWeight: 700 }}>
-            I build hardware, software & one transit map
+            i build hardware, software & one transit map
             <span style={{ color: '#e2372b' }}>.</span>
           </div>
           <div style={{ display: 'flex', fontFamily: 'monospace', color: '#98948a', fontSize: 22 }}>

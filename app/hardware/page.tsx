@@ -10,7 +10,7 @@ export default function HardwarePage() {
   return (
     <StubPage
       counter="01 · hardware build"
-      title="Hardware Build"
+      title="hardware build"
       note="planning · first log entry est. aug 2026"
     />
   );

@@ -10,7 +10,7 @@ export default function WorkPage() {
   return (
     <StubPage
       counter="03 · client work"
-      title="Client Work"
+      title="client work"
       note="deployed · fintech · write-up coming"
     />
   );

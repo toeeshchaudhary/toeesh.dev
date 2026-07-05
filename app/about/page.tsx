@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <StubPage
       counter="05 · about"
-      title="About"
+      title="about"
       note="who · why japan · why ece"
     />
   );
