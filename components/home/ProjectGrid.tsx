@@ -1,44 +1,38 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
+import * as motion from 'motion/react-client';
+import { revealContainer, revealItem, tapPress } from '@/components/motion/variants';
 
-// Asymmetric swiss table: the hardware line is the feature (full row),
-// the other three sit beneath. Ghost numerals, subway bullets, lowercase.
+// Asymmetric swiss table: Navigator is the feature, with supporting proof
+// grouped beneath. Ghost numerals, color marks, lowercase.
 const FEATURE = {
   href: '/hardware',
   bullet: 'H',
   color: 'var(--red)',
   index: '01',
-  title: 'hardware build',
+  title: 'hardware',
   blurb:
-    'an embedded system, built from scratch and logged in public — parts, dead ends, scope screenshots, everything. the page grows as the build does.',
-  status: 'planned · first log aug 2026',
+    'designing small computers and the boards that run them — from circuit to firmware to power. centered on Navigator, a calm, repairable, modular Linux handheld I’m building from scratch.',
+  status: 'flagship build',
 };
 
 const LINES = [
   {
-    href: '/game',
-    bullet: 'G',
-    color: 'var(--chip-blue)',
-    index: '02',
-    title: 'the game',
-    blurb: 'founded a game with a small team. chapter 1 playable build headed to investors, jan 2027.',
-    status: 'in progress',
-  },
-  {
     href: '/work',
     bullet: 'W',
     color: 'var(--chip-green)',
-    index: '03',
-    title: 'client work',
-    blurb: 'production fintech for a real client — bank-data integration, deployed, paid. at 17.',
-    status: 'deployed',
+    index: '02',
+    title: 'finstocks internship',
+    blurb: 'AI Developer internship — building and shipping AI features inside a live fintech product with real users and real product cycles.',
+    status: 'shipped to production',
   },
   {
     href: '/lab',
     bullet: 'L',
     color: 'var(--chip-yellow)',
-    index: '04',
+    index: '03',
     title: 'the lab',
-    blurb: 'llms squeezed onto 4gb of vram, a hand-built linux desktop, ffmpeg machinery. 2am work.',
+    blurb: 'local LLMs on limited VRAM, a hand-tuned Arch + i3 desktop, FFmpeg and shell tooling, and the Next.js transit-map site toeesh.network.',
     status: 'ongoing',
   },
 ];
@@ -46,7 +40,7 @@ const LINES = [
 function Bullet({ ch, color }: { ch: string; color: string }) {
   return (
     <span
-      className="chip"
+      className="code-badge"
       style={{
         background: color,
         color: 'var(--field)',
@@ -63,104 +57,60 @@ function Bullet({ ch, color }: { ch: string; color: string }) {
 
 export default function ProjectGrid() {
   return (
-    <section className="container" style={{ marginTop: 'var(--section-gap)' }}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'baseline',
-          marginBottom: '1.25rem',
-        }}
-      >
+    <motion.section
+      className="container"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.18 }}
+      variants={revealContainer}
+      style={{ marginTop: 'var(--section-gap)' }}
+    >
+      <motion.div className="section-kicker" variants={revealItem}>
         <span className="label" style={{ color: 'var(--bone)' }}>
-          now boarding — work
+          selected projects
         </span>
-        <span className="label">4 lines in service</span>
-      </div>
+        <span className="label">what this portfolio proves</span>
+      </motion.div>
 
-      <div className="card-grid" style={{ gridTemplateColumns: undefined }}>
-        {/* feature line — full width */}
-        <Link
-          href={FEATURE.href}
-          className="project-card"
-          style={{
-            gridColumn: '1 / -1',
-            background: 'var(--field)',
-            padding: 'clamp(1.75rem, 3.5vw, 2.75rem)',
-            position: 'relative',
-            overflow: 'hidden',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
-            gap: '1.25rem 3rem',
-            alignItems: 'end',
-          }}
-        >
-          <span className="ghost" aria-hidden>
-            {FEATURE.index}
-          </span>
-          <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <Bullet ch={FEATURE.bullet} color={FEATURE.color} />
-            <h3
-              style={{
-                fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
-                fontWeight: 900,
-                letterSpacing: '-0.04em',
-                lineHeight: 0.92,
-              }}
-            >
-              {FEATURE.title}
-            </h3>
-          </div>
-          <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <p style={{ color: 'var(--bone-2)', fontSize: 'var(--t-small)', maxWidth: '48ch' }}>
-              {FEATURE.blurb}
-            </p>
-            <span className="label">{FEATURE.status}</span>
-          </div>
-        </Link>
-
-        {/* the other three lines */}
-        {LINES.map((p) => (
+      <motion.div className="project-index" variants={revealContainer}>
+        <motion.div variants={revealItem} whileTap={tapPress}>
           <Link
-            key={p.href}
-            href={p.href}
-            className="project-card line-card"
-            style={{
-              background: 'var(--field)',
-              padding: 'clamp(1.5rem, 3vw, 2rem)',
-              position: 'relative',
-              overflow: 'hidden',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              minHeight: '240px',
-            }}
+            href={FEATURE.href}
+            className="project-index__feature"
+            style={{ '--project-accent': FEATURE.color } as CSSProperties}
           >
-            <span className="ghost" aria-hidden>
-              {p.index}
-            </span>
-            <Bullet ch={p.bullet} color={p.color} />
-            <h3
-              style={{
-                fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)',
-                fontWeight: 850,
-                letterSpacing: '-0.03em',
-                marginTop: 'auto',
-                position: 'relative',
-                zIndex: 1,
-              }}
-            >
-              {p.title}
-            </h3>
-            <p style={{ color: 'var(--bone-2)', fontSize: 'var(--t-small)', position: 'relative', zIndex: 1 }}>
-              {p.blurb}
-            </p>
-            <span className="label" style={{ position: 'relative', zIndex: 1 }}>
-              {p.status}
-            </span>
+            <span className="project-index__number">{FEATURE.index}</span>
+            <Bullet ch={FEATURE.bullet} color={FEATURE.color} />
+            <div className="project-index__body">
+              <span className="label">{FEATURE.status}</span>
+              <h3>{FEATURE.title}</h3>
+              <p>{FEATURE.blurb}</p>
+            </div>
+            <span className="label project-index__action">open project ↗</span>
           </Link>
-        ))}
-      </div>
-    </section>
+        </motion.div>
+
+        <div className="project-index__rows">
+          {LINES.map((p) => (
+            <motion.div key={p.href} variants={revealItem} whileTap={tapPress}>
+              <Link
+                href={p.href}
+                className="project-index__row"
+                style={{ '--project-accent': p.color } as CSSProperties}
+              >
+                <span className="project-index__number">{p.index}</span>
+                <Bullet ch={p.bullet} color={p.color} />
+                <div className="project-index__body">
+                  <span className="label">{p.status}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.blurb}</p>
+                </div>
+                <span className="label project-index__action">view ↗</span>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </motion.section>
   );
 }

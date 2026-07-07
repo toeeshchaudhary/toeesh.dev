@@ -1,80 +1,95 @@
 // Type-specimen hero: the name set like a foundry sheet — baseline grid,
 // crop ticks, mono annotations. RM Neue at 900, lowercase (the system
 // speaks quietly). Same voice as the MTTA brand book.
+import Link from 'next/link';
+import * as motion from 'motion/react-client';
+import { revealContainer, revealItem, ruleDraw } from '@/components/motion/variants';
+
 export default function Hero() {
   return (
-    <header className="container" style={{ paddingTop: '2rem' }}>
+    <motion.header
+      className="container poster-shell hero-poster"
+      initial="hidden"
+      animate="show"
+      variants={revealContainer}
+    >
       {/* corner metadata row */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          gap: '1rem',
-          flexWrap: 'wrap',
-          marginBottom: 'clamp(3rem, 7vh, 5rem)',
-        }}
-      >
-        <span className="label">portfolio · est. 2026</span>
-        <span className="label" style={{ display: 'inline-flex', gap: '0.45rem', alignItems: 'center' }}>
-          <span className="chip" style={{ background: 'var(--red)', width: 8, height: 8 }} />
-          <span className="chip" style={{ background: 'var(--chip-blue)', width: 8, height: 8 }} />
-          <span className="chip" style={{ background: 'var(--chip-green)', width: 8, height: 8 }} />
-          <span className="chip" style={{ background: 'var(--chip-yellow)', width: 8, height: 8 }} />
-        </span>
-        <span className="label">delhi ncr → japan 2027</span>
-      </div>
+      <motion.div className="hero-manifest" variants={revealContainer}>
+        <motion.span className="label" variants={revealItem}>
+          professional portfolio · est. 2026
+        </motion.span>
+        <motion.span className="label hero-manifest__center" variants={revealItem}>
+          <span className="code-badge" style={{ background: 'var(--red)', width: 8, height: 8 }} />
+          <span className="code-badge" style={{ background: 'var(--chip-blue)', width: 8, height: 8 }} />
+          <span className="code-badge" style={{ background: 'var(--chip-green)', width: 8, height: 8 }} />
+          <span className="code-badge" style={{ background: 'var(--chip-yellow)', width: 8, height: 8 }} />
+        </motion.span>
+        <motion.span className="label hero-manifest__right" variants={revealItem}>
+          delhi ncr → japan 2027
+        </motion.span>
+      </motion.div>
 
       {/* the specimen sheet */}
-      <div style={{ position: 'relative' }}>
-        <span
+      <motion.div className="hero-specimen" variants={revealContainer}>
+        <motion.span
           className="label"
+          variants={revealItem}
           style={{ position: 'absolute', top: '-1.6rem', left: 0, color: 'var(--bone-3)' }}
         >
-          rm neue vf · wght 900 · trk −45
-        </span>
-        <span
+          student builder · engineering portfolio
+        </motion.span>
+        <motion.span
           className="label specimen-note--aux"
+          variants={revealItem}
           style={{ position: 'absolute', top: '-1.6rem', right: 0, color: 'var(--bone-3)' }}
         >
-          specimen № 01
-        </span>
+          delhi ncr · india
+        </motion.span>
 
-        <span className="specimen-line" style={{ top: 0 }} />
-        <span className="specimen-line" style={{ top: '50%' }} />
-        <span className="specimen-line" style={{ bottom: 0 }} />
+        <motion.span className="specimen-line" variants={ruleDraw} style={{ top: 0, transformOrigin: 'left' }} />
+        <motion.span className="specimen-line" variants={ruleDraw} style={{ top: '50%', transformOrigin: 'left' }} />
+        <motion.span className="specimen-line" variants={ruleDraw} style={{ bottom: 0, transformOrigin: 'left' }} />
 
-        <h1 className="poster" style={{ position: 'relative', zIndex: 1, padding: '0.06em 0' }}>
+        <motion.h1 className="poster" variants={revealItem} style={{ position: 'relative', zIndex: 1, padding: '0.06em 0' }}>
           toeesh
           <br />
           chaudhary
-        </h1>
+        </motion.h1>
 
-        <span
+        <motion.span
           className="label specimen-note--aux"
+          variants={revealItem}
           style={{ position: 'absolute', bottom: '-1.7rem', right: 0, color: 'var(--bone-3)' }}
         >
-          lh 0.88 · set full-measure
-        </span>
-      </div>
+          hardware · software · systems
+        </motion.span>
+      </motion.div>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))',
-          gap: '1.5rem 3rem',
-          alignItems: 'end',
-          marginTop: 'clamp(3rem, 7vh, 5rem)',
-        }}
-      >
-        <h2 style={{ fontSize: 'var(--t-h2)', fontWeight: 850, letterSpacing: '-0.035em' }}>
-          i build hardware, software
-          <br />& one transit map<span style={{ color: 'var(--red)' }}>.</span>
-        </h2>
-        <p style={{ color: 'var(--bone-2)', fontSize: 'var(--t-small)', justifySelf: 'start' }}>
-          18 · class 12 · headed for electrical &amp; computer engineering. everything below is
-          real — things i've shipped, things i'm building, and one thing i can't stop building.
-        </p>
-      </div>
-    </header>
+      <motion.div className="hero-deck" variants={revealContainer}>
+        <motion.div className="hero-deck__intro" variants={revealItem}>
+          <h2 style={{ fontSize: 'var(--t-h2)', fontWeight: 850, letterSpacing: '-0.035em' }}>
+            I design practical hardware, firmware, and software systems while preparing for electrical and computer engineering<span style={{ color: 'var(--red)' }}>.</span>
+          </h2>
+          <p className="hero-summary">
+            I am Toeesh Chaudhary, an 18-year-old class 12 student from Delhi NCR. This portfolio
+            collects my strongest work: my hardware — a handheld computer called Navigator that I&apos;m
+            building from scratch; an AI developer internship at FinStocks; a lab of AI and Linux
+            experiments; and toeesh.network, my life drawn as a subway map.
+          </p>
+          <motion.div className="hero-actions" variants={revealContainer}>
+            <motion.div variants={revealItem}>
+              <Link href="/hardware" className="button-link">
+                view hardware
+              </Link>
+            </motion.div>
+            <motion.div variants={revealItem}>
+              <a href="mailto:thesonofdevilhunter1@gmail.com" className="button-link button-link--ghost">
+                contact me
+              </a>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.header>
   );
 }

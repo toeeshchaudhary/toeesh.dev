@@ -1,30 +1,30 @@
-// Departure-board status strip — amber LED readout, the MTTA signage voice
-// repurposed as a live "what's running in my life" line. Static, no ticker.
+// Compact status strip for current portfolio priorities. Static, no ticker.
+import * as motion from 'motion/react-client';
+import { revealItem } from '@/components/motion/variants';
+
 export default function ServiceStatus() {
   return (
-    <section className="container" style={{ marginTop: 'clamp(3.5rem, 7vh, 5rem)' }}>
-      <div
-        style={{
-          background: 'var(--board)',
-          border: '1px solid var(--hairline)',
-          padding: '0.85rem 1.25rem',
-          display: 'flex',
-          alignItems: 'baseline',
-          gap: '1rem',
-          flexWrap: 'wrap',
-        }}
+    <motion.section
+      className="container"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.45 }}
+      variants={revealItem}
+      style={{ marginTop: 'clamp(3.5rem, 7vh, 5rem)' }}
+    >
+      <motion.div
+        whileHover={{ borderColor: '#ffd21f', boxShadow: '0 0 0 1px rgba(255, 210, 31, 0.08)' }}
+        className="service-board"
       >
         <span className="label" style={{ color: 'var(--bone-3)', flex: 'none' }}>
-          service status
+          current focus
         </span>
-        <span
-          className="label"
-          style={{ color: '#ffd21f', letterSpacing: '0.16em', lineHeight: 1.9 }}
-        >
-          ● all lines running — sat prep until aug 22 · hardware line boarding
-          aug · chapter 1 due jan 2027 · applications open nov
+        <span className="label service-board__status">
+          ● current focus — SAT prep until Aug 22 · Navigator: block diagram, KiCad, power budget ·
+          university applications open Nov
         </span>
-      </div>
-    </section>
+        <span className="service-board__signal" aria-hidden />
+      </motion.div>
+    </motion.section>
   );
 }

@@ -5,7 +5,7 @@ export const alt = 'toeesh.dev — Toeesh Chaudhary';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-const CHIPS = ['#e2372b', '#2c66d4', '#22a559', '#f5c518'];
+const CHIPS = ['#e2372b', '#2c66d4', '#22a559', '#f5c518', '#ef7b24'];
 
 // Dark swiss poster: charcoal field, compressed bone type, line chips.
 export default function OpengraphImage() {
@@ -34,7 +34,7 @@ export default function OpengraphImage() {
             fontFamily: 'monospace',
           }}
         >
-          <div style={{ display: 'flex' }}>PORTFOLIO · EST. 2026</div>
+          <div style={{ display: 'flex' }}>PORTFOLIO SPECIMEN · EST. 2026</div>
           <div style={{ display: 'flex', gap: 10 }}>
             {CHIPS.map((c, i) => (
               <div key={i} style={{ width: 18, height: 18, borderRadius: 9, background: c, display: 'flex' }} />
@@ -47,16 +47,43 @@ export default function OpengraphImage() {
           style={{
             flex: 1,
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            fontSize: 150,
-            fontWeight: 900,
-            lineHeight: 0.9,
-            letterSpacing: -6,
+            gap: 34,
+            alignItems: 'center',
           }}
         >
-          <div style={{ display: 'flex' }}>toeesh</div>
-          <div style={{ display: 'flex' }}>chaudhary</div>
+          <div style={{ display: 'flex', width: 8, height: 340, background: '#e2372b' }} />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              fontSize: 142,
+              fontWeight: 900,
+              lineHeight: 0.88,
+              letterSpacing: -7,
+            }}
+          >
+            <div style={{ display: 'flex' }}>toeesh</div>
+            <div style={{ display: 'flex' }}>chaudhary</div>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 16,
+              marginLeft: 'auto',
+              fontFamily: 'monospace',
+              color: '#b9b4a5',
+              fontSize: 20,
+              letterSpacing: 3,
+            }}
+          >
+            <div style={{ display: 'flex' }}>HARDWARE</div>
+            <div style={{ display: 'flex' }}>FINSTOCKS</div>
+            <div style={{ display: 'flex' }}>LAB</div>
+            <div style={{ display: 'flex' }}>NETWORK</div>
+            <div style={{ display: 'flex' }}>SYSTEMS</div>
+          </div>
         </div>
 
         <div
@@ -68,10 +95,10 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ display: 'flex', fontWeight: 700 }}>
-            i build hardware, software & one transit map
-            <span style={{ color: '#e2372b' }}>.</span>
+            hardware, firmware, software systems
+            <span style={{ color: '#e02f22' }}>.</span>
           </div>
-          <div style={{ display: 'flex', fontFamily: 'monospace', color: '#98948a', fontSize: 22 }}>
+          <div style={{ display: 'flex', fontFamily: 'monospace', color: '#b9b4a5', fontSize: 22 }}>
             toeesh.dev
           </div>
         </div>

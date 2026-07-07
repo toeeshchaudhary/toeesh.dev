@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { SITE_URL } from '@/lib/site-url';
+import MotionProvider from '@/components/motion/MotionProvider';
+import PageTransition from '@/components/motion/PageTransition';
 
 const OG = { url: '/opengraph-image', width: 1200, height: 630, alt: 'toeesh.dev — Toeesh Chaudhary' };
 
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s — toeesh.dev',
   },
   description:
-    'Toeesh Chaudhary — 18, Delhi NCR. Building at the edge of circuitry and software: embedded hardware, a game venture, production fintech work. ECE applicant, Japan 2027.',
+    'Toeesh Chaudhary — 18, Delhi NCR. Designing practical hardware, firmware, and software systems while preparing for ECE in Japan.',
   applicationName: 'toeesh.dev',
   authors: [{ name: 'Toeesh Chaudhary' }],
   creator: 'Toeesh Chaudhary',
@@ -20,14 +22,15 @@ export const metadata: Metadata = {
     'Toeesh Chaudhary',
     'portfolio',
     'embedded systems',
+    'Navigator',
     'ECE',
-    'game development',
+    'firmware',
     'hardware',
   ],
   alternates: { canonical: '/' },
   openGraph: {
     title: 'toeesh.dev — Toeesh Chaudhary',
-    description: 'Building at the edge of circuitry and software.',
+    description: 'Hardware · firmware · software systems.',
     url: SITE_URL,
     siteName: 'toeesh.dev',
     type: 'website',
@@ -61,7 +64,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <MotionProvider>
+          <PageTransition>{children}</PageTransition>
+        </MotionProvider>
+      </body>
     </html>
   );
 }

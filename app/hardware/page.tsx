@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
-import StubPage from '@/components/shared/StubPage';
+import Article from '@/components/shared/Article';
+import { getArticle } from '@/lib/article';
+
+const article = getArticle('hardware');
 
 export const metadata: Metadata = {
-  title: 'Hardware Build',
+  title: 'Hardware',
+  description: article.description,
   alternates: { canonical: '/hardware' },
 };
 
 export default function HardwarePage() {
-  return (
-    <StubPage
-      counter="01 · hardware build"
-      title="hardware build"
-      note="planning · first log entry est. aug 2026"
-    />
-  );
+  return <Article {...article} />;
 }

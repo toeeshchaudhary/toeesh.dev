@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
-import StubPage from '@/components/shared/StubPage';
+import Article from '@/components/shared/Article';
+import { getArticle } from '@/lib/article';
+
+const article = getArticle('work');
 
 export const metadata: Metadata = {
-  title: 'Client Work',
+  title: 'FinStocks',
+  description: article.description,
   alternates: { canonical: '/work' },
 };
 
 export default function WorkPage() {
-  return (
-    <StubPage
-      counter="03 · client work"
-      title="client work"
-      note="deployed · fintech · write-up coming"
-    />
-  );
+  return <Article {...article} />;
 }

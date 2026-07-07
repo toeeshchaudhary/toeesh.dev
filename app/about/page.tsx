@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
-import StubPage from '@/components/shared/StubPage';
+import Article from '@/components/shared/Article';
+import { getArticle } from '@/lib/article';
+
+const article = getArticle('about');
 
 export const metadata: Metadata = {
   title: 'About',
+  description: article.description,
   alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {
-  return (
-    <StubPage
-      counter="05 · about"
-      title="about"
-      note="who · why japan · why ece"
-    />
-  );
+  return <Article {...article} />;
 }

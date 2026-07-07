@@ -1,23 +1,36 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion } from 'motion/react';
+import { revealContainer, revealItem } from '@/components/motion/variants';
 
 const LINKS = [
   { href: '/hardware', label: 'hardware' },
-  { href: '/game', label: 'game' },
-  { href: '/work', label: 'work' },
+  { href: '/work', label: 'finstocks' },
   { href: '/lab', label: 'lab' },
   { href: '/about', label: 'about' },
 ];
 
 export default function Nav() {
+  const pathname = usePathname();
+
   return (
-    <nav style={{ borderBottom: '1px solid var(--hairline)' }}>
-      <div
+    <motion.nav
+      className="nav-shell"
+      initial="hidden"
+      animate="show"
+      variants={revealItem}
+    >
+      <motion.div
         className="container"
+        variants={revealContainer}
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '1rem',
+          flexWrap: 'wrap',
           paddingTop: '1rem',
           paddingBottom: '1rem',
         }}
@@ -36,14 +49,24 @@ export default function Nav() {
           <span className="chip" style={{ background: 'var(--red)', width: 10, height: 10 }} />
           toeesh.dev
         </Link>
-        <div style={{ display: 'flex', gap: 'clamp(0.9rem, 2.5vw, 1.75rem)', flexWrap: 'wrap' }}>
+        <motion.div
+          variants={revealContainer}
+          style={{ display: 'flex', gap: 'clamp(0.9rem, 2.5vw, 1.75rem)', flexWrap: 'wrap' }}
+        >
           {LINKS.map((l) => (
-            <Link key={l.href} href={l.href} className="label" style={{ color: 'var(--bone)' }}>
-              {l.label}
-            </Link>
+            <motion.span key={l.href} variants={revealItem} whileHover={{ y: -2 }}>
+              <Link
+                href={l.href}
+                className="label"
+                data-active={pathname === l.href}
+                style={{ color: 'var(--bone)' }}
+              >
+                {l.label}
+              </Link>
+            </motion.span>
           ))}
-        </div>
-      </div>
-    </nav>
+        </motion.div>
+      </motion.div>
+    </motion.nav>
   );
 }
