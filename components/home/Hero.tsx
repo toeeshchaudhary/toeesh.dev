@@ -83,7 +83,7 @@ export default function Hero() {
               </Link>
             </motion.div>
             <motion.div variants={revealItem}>
-              <a href="mailto:thesonofdevilhunter1@gmail.com" className="button-link button-link--ghost">
+              <a href="mailto:toeesh239@gmail.com" className="button-link button-link--ghost">
                 contact me
               </a>
             </motion.div>

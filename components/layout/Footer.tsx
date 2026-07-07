@@ -8,8 +8,8 @@ export default function Footer() {
         </div>
         <div className="site-footer__stack">
           <span className="label">contact</span>
-          <a href="mailto:thesonofdevilhunter1@gmail.com" className="label">
-            thesonofdevilhunter1@gmail.com
+          <a href="mailto:toeesh239@gmail.com" className="label">
+            toeesh239@gmail.com
           </a>
           <a href="https://toeeshnetwork.vercel.app" className="label">
             the network ↗
