@@ -32,7 +32,7 @@ const LINES = [
     color: 'var(--chip-yellow)',
     index: '03',
     title: 'the lab',
-    blurb: 'local LLMs on limited VRAM, a hand-tuned Arch + i3 desktop, FFmpeg and shell tooling, and the Next.js transit-map site toeesh.network.',
+    blurb: 'local LLMs on limited hardware, a hand-tuned Arch + i3 desktop, and a shelf of open-source tools — socius (AI terminal companion), chamak, writee, pracq — plus the transit-map site toeesh.network.',
     status: 'ongoing',
   },
 ];
