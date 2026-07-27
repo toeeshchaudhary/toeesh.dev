@@ -67,9 +67,9 @@ export default function ProjectGrid() {
     >
       <motion.div className="section-kicker" variants={revealItem}>
         <span className="label" style={{ color: 'var(--bone)' }}>
-          selected projects
+          the three pillars
         </span>
-        <span className="label">what this portfolio proves</span>
+        <span className="label">hardware · work · the lab</span>
       </motion.div>
 
       <motion.div className="project-index" variants={revealContainer}>

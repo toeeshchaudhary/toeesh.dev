@@ -1297,3 +1297,134 @@ nav a[data-active='true']::after {
     display: none;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   roles board — the "duty roster": current appointments, read
+   as a transit crew board. Same index language as project-index.
+   ───────────────────────────────────────────────────────────── */
+.role-board {
+  border-top: 1px solid var(--hairline);
+}
+.role-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  padding: clamp(1.15rem, 2.4vw, 1.7rem) 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: border-color 160ms ease, padding-left 180ms ease;
+}
+.role-row:hover {
+  border-color: var(--project-accent, var(--red));
+  padding-left: 0.5rem;
+}
+.role-row__body {
+  display: grid;
+  gap: 0.4rem;
+}
+.role-row__body h3 {
+  font-size: clamp(1.35rem, 3vw, 2.1rem);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.role-row__title {
+  color: var(--bone-2);
+}
+.role-row__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+.role-row__period {
+  color: var(--bone-3);
+}
+.role-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #ffd21f;
+  letter-spacing: 0.16em;
+}
+.role-now::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #ffd21f;
+  box-shadow: 0 0 14px rgba(255, 210, 31, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   builds index — the shelf: every ship as a plate in a hairline
+   grid. Accent bleeds in on hover, arrow nudges out.
+   ───────────────────────────────────────────────────────────── */
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  border-top: 1px solid var(--hairline);
+  border-left: 1px solid var(--hairline);
+}
+.build-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(1.35rem, 2.2vw, 1.85rem);
+  min-height: 200px;
+  border-right: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  transition: background 180ms ease, border-color 160ms ease;
+}
+.build-card:hover {
+  background: var(--board);
+  border-color: var(--project-accent, var(--red));
+}
+.build-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.build-card__name {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+.build-card__blurb {
+  color: var(--bone-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.build-card__tech {
+  color: var(--bone-3);
+  margin-top: auto;
+}
+.build-card__arrow {
+  color: var(--bone-3);
+  transition: color 160ms ease, transform 220ms var(--poster-ease, ease);
+}
+.build-card:hover .build-card__arrow {
+  color: var(--project-accent, var(--red));
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .role-row {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    align-items: start;
+  }
+  .role-row__meta {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+    margin-top: 0.35rem;
+  }
+}
