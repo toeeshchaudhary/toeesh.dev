@@ -12,7 +12,7 @@ const FEATURE = {
   index: '01',
   title: 'hardware',
   blurb:
-    'designing small computers and the boards that run them — from circuit to firmware to power. centered on Navigator, a calm, repairable, modular Linux handheld I’m building from scratch.',
+    'designing small computers and the boards that run them — from circuit to firmware to power. centered on Navigator, a calm, repairable, modular Linux handheld I’m building from scratch. also Hardware Lead at ARKANOX, an ECE startup.',
   status: 'flagship build',
 };
 
@@ -32,7 +32,7 @@ const LINES = [
     color: 'var(--chip-yellow)',
     index: '03',
     title: 'the lab',
-    blurb: 'local LLMs on limited hardware, a hand-tuned Arch + i3 desktop, and a shelf of open-source tools — socius (AI terminal companion), chamak, writee, pracq — plus the transit-map site toeesh.network.',
+    blurb: 'local LLMs on limited hardware, a hand-tuned Arch + i3 desktop, and open-source tools — socius (AI terminal companion), chamak, writee, pracq — plus bigger builds like AEGIS (agri-tech IoT) and synergyclash, and the transit-map site toeesh.network.',
     status: 'ongoing',
   },
 ];

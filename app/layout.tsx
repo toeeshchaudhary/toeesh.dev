@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s — toeesh.dev',
   },
   description:
-    'Toeesh Chaudhary — 18, Delhi NCR. Designing practical hardware, firmware, and software systems while preparing for ECE in Japan.',
+    'Toeesh Chaudhary — 17, Delhi NCR. Hardware Lead at ARKANOX and Head of R&D at Hexoforge, designing practical hardware, firmware, and software systems while preparing for ECE in Japan.',
   applicationName: 'toeesh.dev',
   authors: [{ name: 'Toeesh Chaudhary' }],
   creator: 'Toeesh Chaudhary',
@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     'portfolio',
     'embedded systems',
     'Navigator',
+    'ARKANOX',
+    'Hexoforge',
     'ECE',
     'firmware',
     'hardware',

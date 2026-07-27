@@ -20,8 +20,8 @@ export default function ServiceStatus() {
           current focus
         </span>
         <span className="label service-board__status">
-          ● current focus — SAT prep until Aug 22 · Navigator: block diagram, KiCad, power budget ·
-          university applications open Nov
+          ● current focus — Hardware Lead at ARKANOX (ECE startup) · Head of R&amp;D at Hexoforge ·
+          Navigator: block diagram, KiCad, power budget · SAT prep until Aug 22 · university applications open Nov
         </span>
         <span className="service-board__signal" aria-hidden />
       </motion.div>

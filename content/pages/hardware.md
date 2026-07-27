@@ -7,7 +7,7 @@ dek: I build small computers and the circuit boards that bring them to life. My 
 description: Navigator — a calm, repairable, modular Linux handheld I'm designing from scratch, from circuit board to firmware to power.
 ---
 
-I like building the actual thing — the circuit board, the chips on it, the code that runs on those chips, and the unglamorous parts like power and battery life. It sits right between electronics and software, which is exactly where I want to be. Right now everything I'm learning funnels into one project: **Navigator**.
+I like building the actual thing — the circuit board, the chips on it, the code that runs on those chips, and the unglamorous parts like power and battery life. It sits right between electronics and software, which is exactly where I want to be. It's also the work I lead elsewhere: I'm **Hardware Lead at ARKANOX**, an early-stage electrical & computer engineering startup. But everything I'm learning on my own funnels into one project: **Navigator**.
 
 ## Navigator, my flagship
 

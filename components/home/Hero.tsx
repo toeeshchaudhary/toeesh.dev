@@ -71,10 +71,11 @@ export default function Hero() {
             I design practical hardware, firmware, and software systems while preparing for electrical and computer engineering<span style={{ color: 'var(--red)' }}>.</span>
           </h2>
           <p className="hero-summary">
-            I am Toeesh Chaudhary, an 18-year-old class 12 student from Delhi NCR. This portfolio
+            I am Toeesh Chaudhary, a 17-year-old class 12 student from Delhi NCR. This portfolio
             collects my strongest work: my hardware — a handheld computer called Navigator that I&apos;m
-            building from scratch; an AI developer internship at FinStocks; a lab of AI and Linux
-            experiments; and toeesh.network, my life drawn as a subway map.
+            building from scratch; Hardware Lead at ARKANOX, an electrical &amp; computer engineering
+            startup, and Head of R&amp;D at Hexoforge; an AI developer internship at FinStocks; a lab
+            of AI and Linux experiments; and toeesh.network, my life drawn as a subway map.
           </p>
           <motion.div className="hero-actions" variants={revealContainer}>
             <motion.div variants={revealItem}>

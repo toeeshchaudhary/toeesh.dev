@@ -3,15 +3,15 @@ title: about
 line: A
 tag: the person
 accent: var(--chip-orange)
-dek: I'm Toeesh Chaudhary — 18, from Delhi NCR in India. I build across hardware, code, and design, and I'm working toward engineering, hopefully in Japan.
-description: Toeesh Chaudhary — 18, Delhi NCR. Building across hardware, code, and design, working toward electrical and computer engineering.
+dek: I'm Toeesh Chaudhary — 17, from Delhi NCR in India. I build across hardware, code, and design, and I'm working toward engineering, hopefully in Japan.
+description: Toeesh Chaudhary — 17, Delhi NCR. Hardware Lead at ARKANOX, Head of R&D at Hexoforge, building across hardware, code, and design toward electrical and computer engineering.
 ---
 
-I'm an 18-year-old class 12 student from Delhi NCR, and I spend most of my spare time building things.
+I'm a 17-year-old class 12 student from Delhi NCR, and I spend most of my spare time building things.
 
 ## I'd rather show you than tell you
 
-Instead of describing myself, I'd rather point at the work: [Navigator](/hardware), a handheld computer I'm designing; [an AI internship at FinStocks](/work); [a lab](/lab) full of smaller experiments; and [toeesh.network](https://toeeshnetwork.vercel.app), my life drawn as a subway map. The common thread is making things that actually work, start to finish.
+Instead of describing myself, I'd rather point at the work: [Navigator](/hardware), a handheld computer I'm designing; leading hardware at **ARKANOX** and R&D at **Hexoforge**; [an AI internship at FinStocks](/work); [a lab](/lab) full of smaller experiments; and [toeesh.network](https://toeeshnetwork.vercel.app), my life drawn as a subway map. The common thread is making things that actually work, start to finish.
 
 ## Why engineering
 
@@ -23,6 +23,6 @@ Japan is the goal because of its engineering and manufacturing culture, and its 
 
 ## Where I'm at
 
-Right now I'm juggling class 12, SAT prep (until August), and building real projects I can actually point to. University applications open in November, and the plan is to apply with work I can show — not just grades and good intentions. After that: study engineering somewhere serious, ideally in Japan, in 2027.
+Right now I'm juggling class 12, SAT prep (until August), and building real projects I can actually point to. I'm **Hardware Lead at ARKANOX**, an early-stage electrical & computer engineering startup, and **Head of R&D at Hexoforge**, an applied-research studio — both of which pull me deeper into the exact overlap of hardware and software I want to build a career in. University applications open in November, and the plan is to apply with work I can show — not just grades and good intentions. After that: study engineering somewhere serious, ideally in Japan, in 2027.
 
 Want to say hi? [Email me.](mailto:toeesh239@gmail.com)

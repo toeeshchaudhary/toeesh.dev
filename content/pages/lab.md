@@ -27,6 +27,15 @@ I have a habit of turning "I wish something did this" into a real, finished tool
 
 The common thread is the same as the hardware: plain files over databases, offline over cloud, and something you can actually open up and repair.
 
+## Bigger builds
+
+Some experiments outgrow "small tool." These are the larger ones — full apps, sites, and hardware I took start to finish:
+
+- [**AEGIS**](https://github.com/toeeshchaudhary/AEGIS) — a low-cost agri-tech field network for small farmers: ESP32 sensor nodes in the field, a live Next.js cloud dashboard, a rule engine, and AI-written crop advice, with SMS alerts and a demo simulator. My clearest hardware-meets-software project outside Navigator. *(ESP32 firmware · Next.js)*
+- [**synergyclash**](https://github.com/toeeshchaudhary/synergyclash) — a real-time multiplayer corporate-strategy simulator: a live stock market, mergers and hostile takeovers, news and crisis events, an admin control room, and a spectator mode. *(Next.js · Prisma + PostgreSQL · Socket.IO)*
+- [**HASH 12**](https://github.com/toeeshchaudhary/hash12) — a dark, cinematic, scroll-driven site for an inter-school tech fest: a preloader, magnetic buttons, event-hover previews, a horizontal archive, and a custom cursor. *(Next.js · GSAP + Lenis · Three.js)*
+- **XRPbot** — a cross-platform control suite (iOS/Android + desktop) for an XRP robot: it joins the robot's WiFi, streams telemetry at 20 Hz, and drives it with a gamepad, reconnecting automatically. *(Bun monorepo · Expo + Electron)*
+
 ## A computer setup tuned by hand
 
 I run **Arch Linux** with a keyboard-driven, no-frills setup — no wasted clicks, no animations. I've themed and tuned the whole thing by hand so the machine gets out of my way and I can just work. It's equal parts hobby and daily tool: there's always one more thing to make faster or cleaner. The whole rice is bootstrap-installable as [**dotfiles**](https://github.com/toeeshchaudhary/dotfiles) — a minimal grayscale i3wm setup (i3 · polybar · picom · rofi · eww) with pywal theming and a self-update system. *(Shell)*
