@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { motion } from 'motion/react';
-import { BUILDS, BUILD_TAGS, type Build } from '@/lib/builds';
+import { BUILDS, BUILD_TAGS, buildColor, type Build } from '@/lib/builds';
 import { revealContainer, revealItem, cardLift, tapPress } from '@/components/motion/variants';
 
 // Three flagships get real estate; everything else is a dense index row.
@@ -21,7 +21,7 @@ function Bullet({ b, size }: { b: Build; size: number }) {
     <span
       className="code-badge"
       style={{
-        background: b.color,
+        background: buildColor(b),
         color: 'var(--field)',
         width: `${size}rem`,
         height: `${size}rem`,
@@ -90,7 +90,7 @@ export default function ProjectsIndex() {
               target="_blank"
               rel="noreferrer"
               className="feature-card"
-              style={{ '--project-accent': b.color } as CSSProperties}
+              style={{ '--project-accent': buildColor(b) } as CSSProperties}
               variants={revealItem}
               whileHover={cardLift}
               whileTap={tapPress}
@@ -128,7 +128,7 @@ export default function ProjectsIndex() {
                   target="_blank"
                   rel="noreferrer"
                   className="index-row"
-                  style={{ '--project-accent': b.color } as CSSProperties}
+                  style={{ '--project-accent': buildColor(b) } as CSSProperties}
                 >
                   <span className="index-row__num">{String(i + 1).padStart(2, '0')}</span>
                   <Bullet b={b} size={1.6} />

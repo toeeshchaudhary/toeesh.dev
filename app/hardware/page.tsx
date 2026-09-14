@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Article from '@/components/shared/Article';
+import Schematic from '@/components/hardware/Schematic';
 import { getArticle } from '@/lib/article';
 
 const article = getArticle('hardware');
@@ -11,5 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function HardwarePage() {
-  return <Article {...article} />;
+  return (
+    <Article {...article}>
+      <Schematic />
+    </Article>
+  );
 }

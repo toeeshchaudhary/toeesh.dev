@@ -1962,3 +1962,128 @@ nav a[data-active='true']::after {
     grid-column: 3 / -1;
   }
 }
+
+/* ---- navigator block diagram ---- */
+.schema {
+  margin-top: clamp(3rem, 8vh, 5rem);
+}
+.schema__grid {
+  display: grid;
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+}
+@media (min-width: 900px) {
+  .schema__grid {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+.schema__board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--inset);
+}
+.schema__rank {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 0.75rem;
+}
+.schema__node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  color: var(--bone);
+  background: var(--board);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--project-accent, var(--red));
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+.schema__node:hover {
+  background: var(--panel);
+}
+.schema__node[data-active='true'] {
+  background: var(--panel);
+  border-color: var(--project-accent, var(--red));
+}
+.schema__node-name {
+  font-size: 1rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+.schema__node-role {
+  color: var(--bone-3);
+  text-transform: none;
+  letter-spacing: 0;
+}
+/* the bus is drawn as a rail, not another box in the stack */
+.schema__node--bus {
+  border-left-width: 0;
+  border-top: 3px solid var(--project-accent, var(--chip-blue));
+  align-items: center;
+  text-align: center;
+}
+.schema__bus-label {
+  align-self: center;
+  color: var(--bone-3);
+  position: relative;
+  padding: 0.35rem 0;
+}
+.schema__bus-label::before,
+.schema__bus-label::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 0.6rem;
+  background: var(--hairline-strong);
+}
+.schema__bus-label::before {
+  top: -0.6rem;
+}
+.schema__bus-label::after {
+  bottom: -0.6rem;
+}
+.schema__panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--field);
+  border-left: 3px solid var(--project-accent, var(--red));
+}
+.schema__panel-kicker {
+  color: var(--project-accent, var(--red));
+}
+.schema__panel-name {
+  margin-top: 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 850;
+  letter-spacing: -0.035em;
+}
+.schema__panel-blurb {
+  margin-top: 0.75rem;
+  color: var(--bone-2);
+  line-height: 1.6;
+}
+.schema__specs {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+.schema__specs > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.schema__specs dt {
+  color: var(--bone-3);
+}
+.schema__specs dd {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--bone);
+  text-align: right;
+}

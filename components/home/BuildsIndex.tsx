@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import * as motion from 'motion/react-client';
 import { revealContainer, revealItem, cardLift, tapPress } from '@/components/motion/variants';
-import { BUILDS } from '@/lib/builds';
+import { BUILDS, buildColor } from '@/lib/builds';
 
 // The shelf — the individual ships that used to live only in prose on /lab.
 // A hairline grid of plates; accent bleeds in on hover. Order: biggest /
@@ -31,7 +31,7 @@ export default function BuildsIndex() {
             target="_blank"
             rel="noreferrer"
             className="build-card"
-            style={{ '--project-accent': b.color } as CSSProperties}
+            style={{ '--project-accent': buildColor(b) } as CSSProperties}
             variants={revealItem}
             whileHover={cardLift}
             whileTap={tapPress}
@@ -41,7 +41,7 @@ export default function BuildsIndex() {
                 <span
                   className="code-badge"
                   style={{
-                    background: b.color,
+                    background: buildColor(b),
                     color: 'var(--field)',
                     width: '1.5rem',
                     height: '1.5rem',

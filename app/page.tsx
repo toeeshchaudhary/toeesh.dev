@@ -5,7 +5,6 @@ import ServiceStatus from '@/components/home/ServiceStatus';
 import Experience from '@/components/home/Experience';
 import MttaCard from '@/components/home/MttaCard';
 import ProjectGrid from '@/components/home/ProjectGrid';
-import BuildsIndex from '@/components/home/BuildsIndex';
 import CreativeStrip from '@/components/home/CreativeStrip';
 
 export default function HomePage() {
@@ -17,7 +16,6 @@ export default function HomePage() {
         <ServiceStatus />
         <Experience />
         <ProjectGrid />
-        <BuildsIndex />
         <MttaCard />
         <CreativeStrip />
       </main>
