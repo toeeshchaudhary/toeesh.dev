@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site-url';
 import { getRecordingSlugs } from '@/lib/recordings';
 
-const PAGES = ['', '/hardware', '/projects', '/recorder', '/now', '/about'];
+const PAGES = ['', '/hardware', '/projects', '/recorder', '/form-01', '/now', '/about', '/cv'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [...PAGES, ...getRecordingSlugs().map((s) => `/recorder/${s}`)];

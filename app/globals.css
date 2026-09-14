@@ -2087,3 +2087,236 @@ nav a[data-active='true']::after {
   color: var(--bone);
   text-align: right;
 }
+
+/* ---- design log ---- */
+.log {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+.log__row {
+  display: grid;
+  grid-template-columns: 2.25rem 0.6rem minmax(9rem, 14rem) 1fr;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.log__num {
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  color: var(--bone-3);
+}
+.log__dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+}
+.log__item {
+  font-weight: 850;
+  letter-spacing: -0.015em;
+}
+.log__note {
+  color: var(--bone-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.log__state {
+  display: none;
+  text-align: right;
+}
+.log__foot {
+  margin-top: 1rem;
+  color: var(--bone-3);
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+@media (min-width: 900px) {
+  .log__row {
+    grid-template-columns: 2.25rem 0.6rem minmax(10rem, 14rem) 1fr 7rem;
+  }
+  .log__state {
+    display: block;
+  }
+}
+@media (max-width: 899px) {
+  .log__row {
+    grid-template-columns: 2.25rem 0.6rem 1fr;
+  }
+  .log__note {
+    grid-column: 3 / -1;
+  }
+}
+
+/* ---- cv ---- */
+.cv {
+  padding-top: clamp(2rem, 5vh, 3.5rem);
+  padding-bottom: clamp(4rem, 9vh, 7rem);
+  max-width: 60rem;
+}
+.cv__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--bone);
+}
+.cv__name {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.cv__dot {
+  color: var(--red);
+}
+.cv__role {
+  margin-top: 0.5rem;
+  color: var(--red);
+}
+.cv__contact {
+  font-style: normal;
+  text-align: right;
+  line-height: 1.7;
+  color: var(--bone-2);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.cv__summary {
+  margin-top: 1.5rem;
+  color: var(--bone-2);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.cv__section {
+  margin-top: 2.25rem;
+}
+.cv__heading {
+  padding-left: 0.6rem;
+  border-left: 4px solid var(--red);
+  color: var(--bone);
+}
+.cv__entry {
+  margin-top: 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.cv__entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cv__entry h3 {
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+.cv__entry-title {
+  font-weight: 400;
+  color: var(--bone-3);
+}
+.cv__period {
+  color: var(--bone-3);
+}
+.cv__entry p {
+  margin-top: 0.4rem;
+  color: var(--bone-2);
+  line-height: 1.55;
+}
+.cv__projects,
+.cv__split {
+  display: grid;
+  gap: 1.5rem 2.5rem;
+}
+@media (min-width: 760px) {
+  .cv__projects,
+  .cv__split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.cv__project {
+  margin-top: 1rem;
+}
+.cv__project h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 850;
+}
+.cv__mark {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: none;
+}
+.cv__project p {
+  margin-top: 0.3rem;
+  color: var(--bone-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.cv__tech {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--bone-3);
+}
+.cv__skills > div {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.cv__skills dt {
+  font-weight: 850;
+}
+.cv__skills dd {
+  color: var(--bone-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.cv__print-hint {
+  margin-top: 2.5rem;
+  color: var(--bone-3);
+}
+
+/* the page IS the PDF — print it and the chrome falls away */
+@media print {
+  .nav-shell,
+  .site-footer,
+  .cv__print-hint {
+    display: none !important;
+  }
+  :root {
+    --field: #ffffff;
+    --board: #ffffff;
+    --bone: #111111;
+    --bone-2: #333333;
+    --bone-3: #666666;
+    --hairline: #cccccc;
+  }
+  body {
+    background: #fff;
+    color: #111;
+  }
+  .cv {
+    max-width: none;
+    padding: 0;
+  }
+  .cv__section {
+    break-inside: avoid;
+    margin-top: 1.4rem;
+  }
+  .cv__entry,
+  .cv__project {
+    break-inside: avoid;
+  }
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}

@@ -79,9 +79,9 @@ export default function OpengraphImage() {
             }}
           >
             <div style={{ display: 'flex' }}>HARDWARE</div>
-            <div style={{ display: 'flex' }}>FINSTOCKS</div>
-            <div style={{ display: 'flex' }}>LAB</div>
-            <div style={{ display: 'flex' }}>NETWORK</div>
+            <div style={{ display: 'flex' }}>PROJECTS</div>
+            <div style={{ display: 'flex' }}>RECORDER</div>
+            <div style={{ display: 'flex' }}>FORM/01</div>
             <div style={{ display: 'flex' }}>SYSTEMS</div>
           </div>
         </div>

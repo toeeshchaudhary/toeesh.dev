@@ -9,8 +9,10 @@ const LINKS = [
   { href: '/hardware', label: 'hardware' },
   { href: '/projects', label: 'projects' },
   { href: '/recorder', label: 'recorder' },
+  { href: '/form-01', label: 'form/01' },
   { href: '/now', label: 'now' },
   { href: '/about', label: 'about' },
+  { href: '/cv', label: 'cv' },
 ];
 
 export default function Nav() {
