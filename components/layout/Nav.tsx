@@ -7,8 +7,9 @@ import { revealContainer, revealItem } from '@/components/motion/variants';
 
 const LINKS = [
   { href: '/hardware', label: 'hardware' },
-  { href: '/work', label: 'finstocks' },
-  { href: '/lab', label: 'lab' },
+  { href: '/projects', label: 'projects' },
+  { href: '/recorder', label: 'recorder' },
+  { href: '/now', label: 'now' },
   { href: '/about', label: 'about' },
 ];
 

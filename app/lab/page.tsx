@@ -1,15 +1,6 @@
-import type { Metadata } from 'next';
-import Article from '@/components/shared/Article';
-import { getArticle } from '@/lib/article';
+import { redirect } from 'next/navigation';
 
-const article = getArticle('lab');
-
-export const metadata: Metadata = {
-  title: 'Lab',
-  description: article.description,
-  alternates: { canonical: '/lab' },
-};
-
-export default function LabPage() {
-  return <Article {...article} />;
+// The lab's prose was folded into the filterable /projects index.
+export default function LegacyLabPage() {
+  redirect('/projects');
 }

@@ -16,7 +16,7 @@ const ROLES = [
     now: true,
   },
   {
-    href: '/lab',
+    href: '/now',
     bullet: 'H',
     color: 'var(--chip-blue)',
     org: 'Hexoforge',
@@ -25,7 +25,7 @@ const ROLES = [
     now: true,
   },
   {
-    href: '/work',
+    href: '/about',
     bullet: 'F',
     color: 'var(--chip-green)',
     org: 'FinStocks',

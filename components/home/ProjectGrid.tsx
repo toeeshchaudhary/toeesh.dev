@@ -18,22 +18,22 @@ const FEATURE = {
 
 const LINES = [
   {
-    href: '/work',
-    bullet: 'W',
-    color: 'var(--chip-green)',
+    href: '/projects',
+    bullet: 'P',
+    color: 'var(--chip-yellow)',
     index: '02',
-    title: 'finstocks internship',
-    blurb: 'AI Developer internship — building and shipping AI features inside a live fintech product with real users and real product cycles.',
-    status: 'shipped to production',
+    title: 'projects',
+    blurb: 'the whole shelf, filterable — AEGIS (agri-tech IoT), synergyclash, socius (an AI terminal companion), chamak, writee, pracq, the MTTA transit-map engine, and a hand-tuned Arch + i3 desktop. mostly open source.',
+    status: 'ongoing',
   },
   {
-    href: '/lab',
-    bullet: 'L',
-    color: 'var(--chip-yellow)',
+    href: '/recorder',
+    bullet: 'R',
+    color: 'var(--chip-blue)',
     index: '03',
-    title: 'the lab',
-    blurb: 'local LLMs on limited hardware, a hand-tuned Arch + i3 desktop, and open-source tools — socius (AI terminal companion), chamak, writee, pracq — plus bigger builds like AEGIS (agri-tech IoT) and synergyclash, and the transit-map site toeesh.network.',
-    status: 'ongoing',
+    title: 'recorder',
+    blurb: 'long, unedited voice memos — thinking out loud on late walks, with transcripts and topic markers you can jump straight to.',
+    status: 'voice memos',
   },
 ];
 
@@ -69,7 +69,7 @@ export default function ProjectGrid() {
         <span className="label" style={{ color: 'var(--bone)' }}>
           the three pillars
         </span>
-        <span className="label">hardware · work · the lab</span>
+        <span className="label">hardware · projects · recorder</span>
       </motion.div>
 
       <motion.div className="project-index" variants={revealContainer}>

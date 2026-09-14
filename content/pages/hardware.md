@@ -42,4 +42,4 @@ A few principles keep the whole thing honest:
 
 The big design decisions are settled — the two-chip layout, how CommLink works, and roughly what the device should do day to day. From here the plan is to draw the real circuit board, add up how much battery every part needs, and wire up the keyboard on a breadboard to test it. After that comes the first prototype: a thin case, a swappable battery, and the companion e-reader as the first thing to plug in.
 
-If you want to follow along or talk hardware, [email me](mailto:toeesh239@gmail.com). You can also read about [the lab](/lab) where the smaller experiments live, or a bit [about me](/about).
+If you want to follow along or talk hardware, [email me](mailto:toeesh239@gmail.com). You can also browse [the rest of the projects](/projects), see what I’m on [right now](/now), or read a bit [about me](/about).

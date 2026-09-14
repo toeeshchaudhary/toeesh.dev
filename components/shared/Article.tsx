@@ -12,9 +12,11 @@ interface ArticleProps {
   accent: string;
   line: string;
   body: string;
+  /** Interactive pages (projects, recorder) render their own body under the same masthead. */
+  children?: React.ReactNode;
 }
 
-export default function Article({ title, dek, tag, accent, line, body }: ArticleProps) {
+export default function Article({ title, dek, tag, accent, line, body, children }: ArticleProps) {
   return (
     <>
       <Nav />
@@ -49,7 +51,8 @@ export default function Article({ title, dek, tag, accent, line, body }: Article
           className="container article-body"
           style={{ '--article-accent': accent } as CSSProperties}
         >
-          <ArticleBody markdown={body} />
+          {body ? <ArticleBody markdown={body} /> : null}
+          {children}
         </section>
       </main>
       <Footer />
