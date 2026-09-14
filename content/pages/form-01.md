@@ -27,11 +27,111 @@ Coffee shouldn't be expensive just because the room looks good. The target is **
 
 So the café is deliberately built for long stays: free Wi-Fi, plenty of power outlets, comfortable seating, good lighting, air conditioning, reasonable acoustics, and tables big enough to actually work on. If someone buys one coffee and works for four hours, that's fine. **Stay as long as you need.**
 
+## The food
+
+The identity is sandwiches and finger food, not a full restaurant. Small menu, simple preparation, cheap ingredients, good execution, filling portions — roughly **8–12 core sandwiches**, numbered rather than named:
+
+```text
+SANDWICH 01
+SANDWICH 02
+SANDWICH 03
+...
+```
+
+Grilled cheese, egg & cheese, veg/pesto, mushroom & cheese, chicken & cheese, spicy chicken, plus a seasonal slot and a `SANDWICH / EXPERIMENTAL` that rotates. The experimental slot is the important one: it lets the place evolve without the menu getting enormous.
+
+## The coffee
+
+Also intentionally small. Good coffee without unnecessary complexity — no menu of forty variations.
+
+```text
+ESPRESSO          AMERICANO         ICED AMERICANO
+CAPPUCCINO        LATTE             FLAT WHITE
+COLD BREW         FILTER / BATCH    MOKA
+COFFEE TONIC      ICED LATTE
+```
+
+## Target prices
+
+Conceptual targets, not final pricing — real numbers need rent, staff, electricity, equipment, ingredients, wastage, taxes and maintenance costed first.
+
+| Coffee | Target | Sandwiches | Target |
+| --- | ---: | --- | ---: |
+| Espresso | ₹70 | Simple grilled cheese | ₹80 |
+| Americano | ₹80 | Egg & cheese | ₹100 |
+| Iced americano | ₹90 | Veg / pesto | ₹110 |
+| Filter / batch brew | ₹90–110 | Mushroom & cheese | ₹120 |
+| Cappuccino | ₹110 | Chicken & cheese | ₹130 |
+| Latte | ₹120 | Spicy chicken | ₹140 |
+| Cold brew | ₹120 | Experimental / seasonal | ₹130–160 |
+| Flat white | ₹130 | Large loaded sandwich | ₹150–170 |
+| Iced latte | ₹130 | | |
+| Moka | ₹140 | | |
+| Coffee tonic | ₹150 | | |
+
+Student combos at **₹160** (americano + sandwich) and **₹190** (latte + sandwich). The test is that someone walks in with ₹150–200, eats, drinks, and works for several hours.
+
 ## The look
 
-The name is intentionally minimal and system-like — it should read more like a designed object or an architecture project than a café brand. The aesthetic is Swiss modernism, brutalist architecture, industrial workshop, Japanese restraint, and creative technology, in roughly that order.
+The name is intentionally minimal and system-like — it should read more like a designed object or an architecture project than a café brand. The aesthetic is Swiss modernism, brutalist architecture, industrial workshop, Japanese restraint, and creative technology, in roughly that order. Concrete, steel, wood.
 
-Concrete, steel, wood. Information treated as design rather than decoration.
+The graphic language is where the Swiss influence goes hardest: large black posters, white type, bold monospace, information first.
+
+```text
+────────────────────────
+
+FORM/01
+
+COFFEE
+SANDWICHES
+WORKSPACE
+
+OPEN 08:00
+CLOSE 23:00
+
+ESPRESSO       ₹70
+AMERICANO      ₹80
+LATTE         ₹120
+COLD BREW     ₹120
+
+SANDWICH 01   ₹100
+SANDWICH 02   ₹120
+SANDWICH 03   ₹140
+
+WIFI           FREE
+POWER          FREE
+
+STAY
+AS LONG
+AS YOU NEED
+
+────────────────────────
+```
+
+No illustrations, no fake coffee-bean imagery, no motivational quotes, no clutter.
+
+## Information as design
+
+Everything — menu, signage, packaging, website, posters, receipts, merchandise — speaks one technical, documentation-style language. A sandwich is written like a spec:
+
+```text
+SANDWICH 04
+
+BREAD
++
+EGG
++
+CHEESE
++
+HOT SAUCE
++
+BLACK PEPPER
+
+₹110
+
+AVAILABLE
+08:00—23:00
+```
 
 ## The "01" system
 
@@ -46,6 +146,73 @@ FORM/01 — LAB
 ```
 
 Products get numbered the same way — `SANDWICH / 01`, `COFFEE / 02`, `POSTER / 03`, `EXPERIMENT / 04`. The numbering makes it feel like an evolving project rather than a static business, which is the point.
+
+## Evidence that someone builds things here
+
+Not a "tech café." No RGB, no startup-bro aesthetics. Just small details: a custom display at the counter, experimental electronics, hardware prototypes, custom lighting controls, a small listening station, a synth prototype, technical diagrams, custom furniture.
+
+There'd be a glass case with whatever is currently being built in it:
+
+```text
+CURRENTLY BUILDING
+
+/01
+CUSTOM SYNTH
+
+STATUS
+PROTOTYPE
+
+LAST UPDATE
+04.08.XX
+```
+
+The space becomes a living laboratory rather than a decorated room.
+
+## Music and community
+
+Music matters, but never loud enough to interfere with work, and never a generic café playlist — indie, ambient, electronic, experimental, hip-hop, jazz, breakbeat, instrumental, local artists. Eventually: listening sessions, small shows, local artist showcases, tiny live performances.
+
+The community side is what turns it from a shop into a place people belong to — a community bookshelf, a noticeboard, local art, student projects, small workshops, coding meetups, study groups, electronics workshops, portfolio nights. And a wall people write on:
+
+```text
+CURRENTLY MAKING
+
+WHAT ARE YOU WORKING ON?
+
+PROJECT:
+______________
+
+CONTACT:
+______________
+```
+
+## The space
+
+```text
+┌───────────────────────────────────────────────┐
+│                 FORM/01                       │
+│     COFFEE / FOOD / WORK / COMMUNITY          │
+├───────────────────────────────────────────────┤
+│   COFFEE BAR                                  │
+│   ESPRESSO                                    │
+│   SANDWICHES                                  │
+├───────────────────────────────────────────────┤
+│              COMMUNAL TABLE                   │
+│     ○      ○      ○      ○      ○             │
+│   POWER   POWER   POWER   POWER   POWER       │
+├───────────────────────┬───────────────────────┤
+│   QUIET WORK          │   SOCIAL / LOUNGE     │
+│   INDIVIDUAL          │   SOFAS / TABLES      │
+│   DESKS               │                       │
+├───────────────────────┴───────────────────────┤
+│             CURRENTLY BUILDING                │
+│              /01 LAB                          │
+└───────────────────────────────────────────────┘
+```
+
+## What it is not
+
+An expensive Instagram café. A pretentious specialty coffee shop. A corporate coworking office. A restaurant with seventy menu items. A tech-bro startup café. A generic "industrial" interior. A beige minimalist café. A place that forces you out after one drink. A space covered in motivational quotes. A place that looks expensive and provides nothing useful.
 
 ## The core promise
 

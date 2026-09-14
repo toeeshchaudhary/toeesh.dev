@@ -2320,3 +2320,40 @@ nav a[data-active='true']::after {
     margin: 14mm;
   }
 }
+
+/* ---- prose tables (FORM/01 pricing) ---- */
+.prose table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.prose thead th {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone-3);
+  border-bottom: 1px solid var(--hairline-strong);
+}
+.prose tbody td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.prose th[align='right'],
+.prose td[align='right'] {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--bone);
+}
+/* a wide table scrolls itself rather than the page */
+.prose .table-scroll {
+  overflow-x: auto;
+}
+.prose pre {
+  /* the FORM/01 posters are drawings — keep their columns intact */
+  line-height: 1.45;
+}
