@@ -21,7 +21,7 @@ export default function ServiceStatus() {
         </span>
         <span className="label service-board__status">
           ● current focus — Hardware Lead at ARKANOX (ECE startup) · Head of R&amp;D at Hexoforge ·
-          Navigator: block diagram, KiCad, power budget · SAT prep until Aug 22 · university applications open Nov
+          Navigator: block diagram, KiCad, power budget · class 12 boards · university applications open Nov
         </span>
         <span className="service-board__signal" aria-hidden />
       </motion.div>
